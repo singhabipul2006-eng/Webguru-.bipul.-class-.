@@ -1,0 +1,65 @@
+# 1. Concatenate two strings
+s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+print("Concatenated String:", s1 + s2)
+
+# 2. Detect and replace double spaces
+text = input("Enter a string with spaces: ")
+print("Fixed String:", text.replace("  ", " "))
+
+# 3. Extract substring "Python"
+string = "Welcome to Python Programming"
+print("Extracted Substring:", string[11:17])  # or string.split()[2]
+
+# 4. Palindrome checker and transformer
+word = input("Enter a string: ").replace(" ", "").lower()
+if word == word[::-1]:
+    print("Palindrome ✅")
+else:
+    palindrome = word + word[::-1]
+    print("Not a palindrome ❌. Transformed:", palindrome)
+
+# 5. Print input data type
+user_input = eval(input("Enter something: "))  # eval tries to auto-detect type
+print("Data type:", type(user_input))
+
+# 6. Pattern with escape sequences
+print("\"Python\"\nIs\nawesome!")
+
+# 7. Count vowels in a string
+s = input("Enter a string: ").lower()
+vowels = "aeiou"
+count = sum(1 for ch in s if ch in vowels)
+print("Number of vowels:", count)
+
+# 8. Replace 'a' with '@'
+s = input("Enter a string: ")
+print("Modified String:", s.replace("a", "@"))
+
+# 9. Reverse a string using slicing
+s = input("Enter a string: ")
+print("Reversed String:", s[::-1])
+
+# 10. Arithmetic operations
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b if b != 0 else "Undefined")
+print("Modulus:", a % b if b != 0 else "Undefined")
+
+# 11. Count occurrence of each character
+s = input("Enter a string: ")
+freq = {}
+for ch in s:
+    freq[ch] = freq.get(ch, 0) + 1
+print("Character Frequencies:", freq)
+
+# 12. Swap case (lower -> upper, upper -> lower)
+s = input("Enter a string: ")
+print("Swapped Case:", s.swapcase())
+
+# 13. Check if string is alphanumeric
+s = input("Enter a string: ")
+print("Is Alphanumeric?", s.isalnum())
