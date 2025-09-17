@@ -1,0 +1,171 @@
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+word_count = {}
+
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+
+print("Word Frequency:", word_count)
+#2
+s = input("Enter a string: ")
+compressed = ""
+count = 1
+
+for i in range(1, len(s)):
+    if s[i] == s[i-1]:
+        count += 1
+    else:
+        compressed += s[i-1] + str(count)
+        count = 1
+compressed += s[-1] + str(count)
+
+print("Compressed string:", compressed)
+
+#3s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+
+if len(s1) == len(s2) and s2 in (s1 + s1):
+    print("Yes, it is a rotation")
+else:
+    print("No, not a rotation")
+
+#4
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+op = input("Enter operation (+,-,*,/): ")
+
+if op == '+':
+    print("Result:", a + b)
+elif op == '-':
+    print("Result:", a - b)
+elif op == '*':
+    print("Result:", a * b)
+elif op == '/':
+    if b != 0:
+        print("Result:", a / b)
+    else:
+        print("Division by zero error")
+else:
+    print("Invalid operator")
+
+
+#5
+questions = [
+    {"q": "Capital of India?", "options": ["Delhi", "Mumbai", "Kolkata", "Chennai"], "ans": "Delhi"},
+    {"q": "2 + 2 = ?", "options": ["3", "4", "5", "6"], "ans": "4"},
+    {"q": "Largest planet?", "options": ["Earth", "Mars", "Jupiter", "Venus"], "ans": "Jupiter"}
+]
+
+prize = 0
+for i, q in enumerate(questions, 1):
+    print(f"\nQ{i}: {q['q']}")
+    for idx, opt in enumerate(q["options"], 1):
+        print(f"{idx}. {opt}")
+    ans = input("Your answer: ")
+    if ans == q["ans"]:
+        prize += 1000
+        print("Correct ✅, Prize:", prize)
+    else:
+        print("Wrong ❌, Game Over")
+        break
+
+
+#6
+import random
+
+moves = ["rock", "paper", "scissors"]
+
+for _ in range(3):  # play 3 rounds
+    user = input("Enter rock/paper/scissors: ").lower()
+    comp = random.choice(moves)
+    print("Computer chose:", comp)
+
+    if user == comp:
+        print("Draw")
+    elif (user == "rock" and comp == "scissors") or \
+         (user == "paper" and comp == "rock") or \
+         (user == "scissors" and comp == "paper"):
+        print("You win")
+    else:
+        print("Computer wins")
+#7
+students = ["Alice", "Bob", "Charlie", "David", "Eva"]
+
+for _ in range(3):
+    name = input("Enter student name: ")
+    if name in students:
+        print(f"Student {name} is enrolled")
+    else:
+        print(f"Student {name} is not found")
+
+#8
+numbers = [12, 7, 9, 20, 15, 8]
+even, odd = [], []
+
+for num in numbers:
+    if num % 2 == 0:
+        even.append(num)
+    else:
+        odd.append(num)
+
+print("Even numbers:", even)
+print("Odd numbers:", odd)
+
+#9
+words = ["Python", "is", "an", "amazing", "language"]
+n = int(input("Enter a number n: "))
+
+for word in words:
+    if len(word) > n:
+        print(word)
+
+#10
+nums = [1, 2, 2, 3, 4, 3, 5, 1]
+unique = list(set(nums))
+print("Unique elements:", unique)
+
+#11
+scores = [95, 82, 67, 45, 77]
+score = int(input("Enter a score: "))
+
+if score in scores:
+    if score >= 90:
+        print("Grade: A")
+    elif score >= 75:
+        print("Grade: B")
+    elif score >= 60:
+        print("Grade: C")
+    else:
+        print("Grade: F")
+else:
+    print("Score not found")
+
+#12
+total = 0
+
+while True:
+    num = int(input("Enter a number (0 to stop): "))
+    if num == 0:
+        break
+    elif num > 0:
+        total += num
+
+print("Total sum:", total)
+
+#13
+dept1_guests = ["Alice", "Bob", "Charlie"]
+dept2_guests = ["Bob", "David", "Eva"]
+
+merged = sorted(set(dept1_guests + dept2_guests))
+print("Final guest list:", merged)
+
+#14
+ages = [16, 18, 20, 15, 21, 17]
+
+for age in ages:
+    if age == 21:
+        print("Access granted (VIP)")
+        break
+    elif age >= 18:
+        print("Access granted")
