@@ -1,0 +1,80 @@
+#1
+num = int(input("Enter a number: "))
+
+if num == 0:
+    print("Zero")
+elif num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")
+
+#2
+for i in range(1, 51):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+
+#3
+choice = int(input("Enter choice (1-4): "))
+
+match choice:
+    case 1:
+        print("Add")
+    case 2:
+        print("Subtract")
+    case 3:
+        print("Multiply")
+    case 4:
+        print("Divide")
+    case _:
+        print("Invalid Choice")
+
+#4
+def calculate(num1, num2, *, operation):
+    if operation == 'add':
+        return num1 + num2
+    elif operation == 'subtract':
+        return num1 - num2
+    elif operation == 'multiply':
+        return num1 * num2
+    elif operation == 'divide':
+        if num2 == 0:
+            return "Error: Division by zero"
+        return num1 / num2
+    else:
+        return "Invalid operation"
+
+# Example usage
+print(calculate(10, 5, operation='add'))      # 15
+print(calculate(10, 5, operation='multiply')) # 50
+
+#5
+names = ['Alice', 'Bob', 'Charlie', 'Diana']
+
+for index, name in enumerate(names, start=1):
+    print(index, name)
+#6
+while True:
+    num = int(input("Enter a positive number: "))
+    if num > 0:
+        print("Valid input received")
+        break
+    else:
+        print("Please try again.")
+
+#7
+import time
+
+current_hour = time.localtime().tm_hour
+
+if 5 <= current_hour < 12:
+    print("Good Morning!")
+elif 12 <= current_hour < 18:
+    print("Good Afternoon!")
+else:
+    print("Good Evening!")
